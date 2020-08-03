@@ -1,0 +1,67 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <h1 class="text-center mb-3">
+          <i class="fas fa-user-plus"></i> Exam
+        </h1>
+        <% include ./partials/messages %>
+        <form action="/users/dashboard method="POST">
+          <div class="form-group">
+            <label for="quizTitle">Enter question title</label>
+            <input
+              type="string"
+              id="quizTitle"
+              name="quizTitle"
+              class="form-control"
+              placeholder="Enter question title"
+              value="<%= typeof quizTitle != 'undefined' ? quizTitle : '' %>"
+            />
+            <label for="quizTitle">Answer 1</label>
+            <input
+              type="string"
+              id="a1"
+              name="a1"
+              class="form-control"
+              placeholder="Answer 1"
+              value="<%= typeof a1 != 'undefined' ? a1 : '' %>"
+            />
+            <label for="quizTitle">Answer 2</label>
+            <input
+              type="string"
+              id="a2"
+              name="a2"
+              class="form-control"
+              placeholder="Answer 2"
+              value="<%= typeof a2 != 'undefined' ? a2 : '' %>"
+            /> <label for="quizTitle">Answer 3</label>
+            <input
+              type="string"
+              id="a3"
+              name="a3"
+              class="form-control"
+              placeholder="Answer 3"
+              value="<%= typeof a3 != 'undefined' ? a3 : '' %>"
+            /> <label for="quizTitle">Answer 4</label>
+            <input
+              type="string"
+              id="a4"
+              name="a4"
+              class="form-control"
+              placeholder="Answer 4"
+              value="<%= typeof a4 != 'undefined' ? a4 : '' %>"
+            />
+          </div>
+          <label for="quizTitle">Select the correct answer</label>
+          <input type="radio" name="Answer 1" id="goodAnswer" value="a1"><br><br>
+          <input type="radio" name="Answer 2" id="goodAnswer" value="a2"><br><br>
+          <input type="radio" name="Answer 3" id="goodAnswer" value="a3"><br><br>
+          <input type="radio" name="Answer 4" id="goodAnswer" value="a4"><br><br>
+
+          <a href="/questions" class="btn btn-secondary">Next Quiz</a>
+          <a href="/dashboard" class="btn btn-secondary">Finish Quiz</a>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+  

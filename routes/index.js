@@ -5,6 +5,12 @@ const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
 // Welcome Page
 router.get('/', forwardAuthenticated, (req, res) => res.render('welcome'));
 
+//Quiz page 
+router.get('/quiz', (req, res) => res.render('quiz'));
+
+//Questions page 
+router.get('/questions', (req, res) => res.render('questions'));
+
 // Dashboard
 router.get('/dashboard', ensureAuthenticated, (req, res) =>
   res.render('dashboard', {
@@ -12,12 +18,9 @@ router.get('/dashboard', ensureAuthenticated, (req, res) =>
   })
 );
 
-
 //Quiz
-router.get('/quiz', ensureAuthenticated, (req,res)=> 
-  res.render('quiz', {
-    user:req.user
-  })
+router.get('/users/quiz', (req,res)=> 
+  res.redirect('/users/quiz')
 );
 
 module.exports = router;
